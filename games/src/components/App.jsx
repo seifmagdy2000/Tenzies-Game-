@@ -22,7 +22,7 @@ export default function App() {
         if (die.isheld) {
           return die; 
         } else {
-          return { ...die, value: getRandomNumber(1, 6, true) }; // ✅ Otherwise, reroll
+          return { ...die, value: getRandomNumber(1, 6, true) }; 
         }
       })
     );

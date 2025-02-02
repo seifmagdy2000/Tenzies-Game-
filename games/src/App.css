@@ -48,16 +48,15 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-/* Default style for dice */
+
 .dice-container > button {
   background-color: white;
   color: black;
 }
 
-/* Style for held dice */
 .dice-container > button.held {
-  background-color: #59E391; /* Green background for held dice */
-  color: white; /* White text for held dice */
+  background-color: #59E391; 
+  color: white; 
 }
 
 .dice-container > button:hover {
