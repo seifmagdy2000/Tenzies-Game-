@@ -1,11 +1,21 @@
 import React from "react";
+import Confetti from "react-confetti";
 import "../App.css";
 import Die from "./Die";
 import RollBtn from "./RollBtn";
 import getRandomNumber from "../util/randNumberGenerator";
 
+ 
 export default function App() {
-  const [numbersArray, setNumbersArray] = React.useState(generateArray);
+  const [numbersArray, setNumbersArray] = React.useState(()=>generateArray());
+  let isWon = false;
+  if (
+    numbersArray.every(die => die.isheld) && 
+    numbersArray.every(die => die.value === numbersArray[0].value)
+)
+ {
+    isWon= true;
+}
 
   function generateArray() {
     return new Array(10).fill(0).map((_, index) => ({
@@ -14,8 +24,6 @@ export default function App() {
       isheld: false
     }));
   }
-  
-
   function RollDice() {
     setNumbersArray(prevArray =>
       prevArray.map(die => {
@@ -45,11 +53,16 @@ export default function App() {
 
   return (
     <main>
+      {isWon? <Confetti/> :null}
       <div className="mainSection">
         <div className="white-container">
+          <div className="title">
+            <h1>Tenzies</h1>
+            <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+          </div>
           <div className="dice-container">{diceElement}</div>
           <div className="RollBtn-Container">
-            <RollBtn handleClicks={RollDice} />
+            <RollBtn isWon ={isWon}  handleClicks={RollDice} />
           </div>
         </div>
       </div>
