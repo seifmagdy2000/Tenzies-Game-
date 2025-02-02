@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.mainSection {
+  color: #000;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.white-container {
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dice-container {
+  margin-top: 15vh;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.dice-container > button {
+  width: calc(20% - 16px);
+  height: 80px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  margin: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Default style for dice */
+.dice-container > button {
+  background-color: white;
+  color: black;
+}
+
+/* Style for held dice */
+.dice-container > button.held {
+  background-color: #59E391; /* Green background for held dice */
+  color: white; /* White text for held dice */
+}
+
+.dice-container > button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.RollBtn-Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.RollBtn {
+  background-color: blueviolet;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.RollBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
