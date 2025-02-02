@@ -16,7 +16,10 @@ export default function App() {
  {
     isWon= true;
 }
-
+  function newGame()
+  {
+    setNumbersArray(generateArray)
+  }
   function generateArray() {
     return new Array(10).fill(0).map((_, index) => ({
       id: index, 
@@ -62,7 +65,7 @@ export default function App() {
           </div>
           <div className="dice-container">{diceElement}</div>
           <div className="RollBtn-Container">
-            <RollBtn isWon ={isWon}  handleClicks={RollDice} />
+            <RollBtn newGame={newGame} isWon ={isWon}  handleClicks={RollDice} />
           </div>
         </div>
       </div>
